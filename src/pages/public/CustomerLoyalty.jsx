@@ -268,8 +268,15 @@ export default function CustomerLoyalty(){
           <h1>{restaurant.name}</h1>
           <p className="welcome-msg">{restaurant.welcomeMessage}</p>
           <div className="loyalty-explain">
-            <b>How it works:</b> <span style={{display:'inline-flex',alignItems:'center',gap:4}}>Scan QR <FiArrowRight size={12} /> Join <FiArrowRight size={12} /> Earn <b>{restaurant.loyalty.welcomeBonus}</b> welcome points <FiArrowRight size={12} /> Every visit <b>{restaurant.loyalty.pointsPerVisit}</b> points <FiArrowRight size={12} /> Unlock rewards</span><br/>
-            <span className="muted">Max <b>{maxScansPerDay} scan{maxScansPerDay>1?'s':''} per day</b> per customer</span>
+            <div className="loyalty-explain-title">How it works</div>
+            <ol className="how-steps">
+              <li><span className="how-num">1</span><span className="how-text">Scan the QR code</span></li>
+              <li><span className="how-num">2</span><span className="how-text">Join with your name &amp; phone</span></li>
+              <li><span className="how-num">3</span><span className="how-text">Earn <b>{restaurant.loyalty.welcomeBonus}</b> welcome points</span></li>
+              <li><span className="how-num">4</span><span className="how-text">Every visit: <b>{restaurant.loyalty.pointsPerVisit}</b> points</span></li>
+              <li><span className="how-num">5</span><span className="how-text">Unlock &amp; redeem rewards</span></li>
+            </ol>
+            <div className="how-limit"><FiLock size={12} /> Max {maxScansPerDay} scan{maxScansPerDay>1?'s':''} per day per customer</div>
           </div>
         </div>
 
